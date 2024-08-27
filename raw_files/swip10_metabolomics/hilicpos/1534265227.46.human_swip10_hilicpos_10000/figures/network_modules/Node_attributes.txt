@@ -1,0 +1,99 @@
+CPD_ID	CPD_NAME	mz_row_Statistic	From_mz_row	From_EmpiricalCompound
+C00588	Choline phosphate; Phosphorylcholine; Phosphocholine; O-Phosphocholine	3.555	row345	E511
+C00082	L-Tyrosine; (S)-3-(p-Hydroxyphenyl)alanine; (S)-2-Amino-3-(p-hydroxyphenyl)propionic acid; Tyrosine	6.2412	row77	E716
+C00183	L-Valine; 2-Amino-3-methylbutyric acid	11.379	row15	E557
+C00092	D-Glucose 6-phosphate; Glucose 6-phosphate; Robison ester	11.658	row12	E118
+C00079	L-Phenylalanine; (S)-alpha-Amino-beta-phenylpropionic acid	5.0843	row135	E244
+C00668	alpha-D-Glucose 6-phosphate	11.658	row12	E118
+C01097	D-Tagatose 6-phosphate	11.658	row12	E118
+C01172	beta-D-Glucose 6-phosphate	11.658	row12	E118
+CE2172		5.0843	row135	E244
+C05650	Tetrahydropteridine; 5,6,7,8-Tetrahydropteridine	5.6587	row103	E67
+C02291	L-Cystathionine	4.2944	row215	E25
+C00431	5-Aminopentanoate; 5-Aminopentanoic acid; 5-Aminovaleric acid	11.379	row15	E557
+C05519	L-Allothreonine; L-allo-Threonine	4.2775	row217	E34
+C00188	L-Threonine; 2-Amino-3-hydroxybutyric acid	4.2775	row217	E34
+C00166	Phenylpyruvate; Phenylpyruvic acid; alpha-Ketohydrocinnamic acid; keto-Phenylpyruvate; 3-Phenyl-2-oxopropanoate	5.4474	row116	E448
+C00079	L-Phenylalanine; (S)-alpha-Amino-beta-phenylpropionic acid	5.0355	row139	E244
+C03546	myo-Inositol 4-phosphate; D-myo-Inositol 4-phosphate; 1D-myo-Inositol 4-phosphate; 1D-myo-Inositol 4-monophosphate; Inositol 4-phosphate	11.658	row12	E118
+vacccoa	vaccenyl coenzyme A	-8.477	row35	E285
+C06055	O-Phospho-4-hydroxy-L-threonine; 4-(Phosphonooxy)-threonine; 4-(Phosphonooxy)-L-threonine	-3.6674	row325	E354
+C00819	D-Glutamine; D-2-Aminoglutaramic acid	12.003	row11	E424
+C00064	L-Glutamine; L-2-Aminoglutaramic acid	12.003	row11	E424
+C02558	N-Acetylarylamine	5.6587	row103	E138
+CE2026	3-methylcrotonoylglycine	4.222	row224	E435
+C00525	D-Tryptophan	5.9056	row89	E116
+C00093	sn-Glycerol 3-phosphate; Glycerophosphoric acid; D-Glycerol 1-phosphate; Glycerol-3-phosphate	4.1463	row233	E495
+C02642	3-Ureidopropionate; 3-Ureidopropanoate; beta-Ureidopropionic acid; N-Carbamoyl-beta-alanine	5.1449	row134	E362
+CE2174		6.2412	row77	E716
+CE3075	sorbitol 3-phosphate	11.658	row12	E118
+C00065	L-Serine; L-2-Amino-3-hydroxypropionic acid; L-3-Hydroxy-alanine; Serine	8.4948	row34	E380
+C00525	D-Tryptophan	6.4604	row69	E116
+C00166	Phenylpyruvate; Phenylpyruvic acid; alpha-Ketohydrocinnamic acid; keto-Phenylpyruvate; 3-Phenyl-2-oxopropanoate	4.0522	row251	E448
+C04006	1D-myo-Inositol 3-phosphate; D-myo-Inositol 3-phosphate; myo-Inositol 3-phosphate; Inositol 3-phosphate; 1D-myo-Inositol 3-monophosphate; D-myo-Inositol 3-monophosphate; myo-Inositol 3-monophosphate; Inositol 3-monophosphate; 1L-myo-Inositol 1-phosphate; L-myo-Inositol 1-phosphate	11.658	row12	E118
+C04282	1-Pyrroline-4-hydroxy-2-carboxylate	9.892	row23	E645
+C00811	4-Coumarate; p-Coumaric acid; trans-4-Hydroxycinnamate; trans-p-Hydroxycinnamate; 4-Hydroxycinnamic acid; 4-Hydroxycinnamate	4.0522	row251	E448
+C02532	D-O-Phosphoserine	-4.622	row178	E154
+C02714	N-Acetylputrescine	5.0052	row141	E62
+C00327	L-Citrulline; 2-Amino-5-ureidovaleric acid; Citrulline	5.1941	row130	E357
+C05838	cis-2-Hydroxycinnamate; 2-Coumarinate	4.0522	row251	E448
+C05345	beta-D-Fructose 6-phosphate	11.658	row12	E118
+C00636	D-Mannose 1-phosphate; alpha-D-Mannose 1-phosphate	11.658	row12	E118
+C00103	D-Glucose 1-phosphate; alpha-D-Glucose 1-phosphate; Cori ester; D-Glucose alpha-1-phosphate	11.658	row12	E118
+C02976	Fructose 1-phosphate	11.658	row12	E118
+CE2172		5.0355	row139	E244
+C02238	5-Oxo-L-proline	9.892	row23	E645
+od2coa	trans-Octadec-2-enoyl-CoA	-8.477	row35	E285
+C05594	3-Methoxy-4-hydroxyphenylethyleneglycol	3.555	row345	E511
+C00217	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid	13.025	row10	E107
+C01094	D-Fructose 1-phosphate	11.658	row12	E118
+C00612	N1-Acetylspermidine	6.22	row78	E309
+C05938	L-4-Hydroxyglutamate semialdehyde	13.025	row10	E107
+C03862	Dolichyl phosphate D-mannose; Dolichyl D-mannosyl phosphate	11.658	row12	E118
+C00811	4-Coumarate; p-Coumaric acid; trans-4-Hydroxycinnamate; trans-p-Hydroxycinnamate; 4-Hydroxycinnamic acid; 4-Hydroxycinnamate	5.4474	row116	E448
+C00051	Glutathione; 5-L-Glutamyl-L-cysteinylglycine; N-(N-gamma-L-Glutamyl-L-cysteinyl)glycine; gamma-L-Glutamyl-L-cysteinyl-glycine; GSH; Reduced glutathione	4.6859	row171	E788
+C01171	alpha-D-Hexose 1-phosphate	11.658	row12	E118
+C05938	L-4-Hydroxyglutamate semialdehyde	14.254	row8	E107
+C01149	4-Trimethylammoniobutanal	3.3769	row390	E274
+C00134	Putrescine; 1,4-Butanediamine; 1,4-Diaminobutane; Tetramethylenediamine	4.8091	row160	E132
+C02965	D-Hexose 6-phosphate	11.658	row12	E118
+hpdcacoa	heptadecanoyl coa	-6.6978	row65	E27
+C01005	O-Phospho-L-serine; L-O-Phosphoserine; 3-Phosphoserine; Dexfosfoserine	-4.622	row178	E154
+C00740	D-Serine	8.4948	row34	E380
+C01177	Inositol 1-phosphate; myo-Inositol 1-phosphate; 1D-myo-Inositol 1-phosphate; D-myo-Inositol 1-phosphate; 1D-myo-Inositol 1-monophosphate	11.658	row12	E118
+C03735	alpha-D-Hexose 6-phosphate	11.658	row12	E118
+C00085	D-Fructose 6-phosphate; D-Fructose 6-phosphoric acid; Neuberg ester	11.658	row12	E118
+C01029		6.22	row78	E309
+C05100	3-Ureidoisobutyrate	12.003	row11	E424
+C03078	4-Guanidinobutanamide	5.0355	row139	E87
+C02763	enol-Phenylpyruvate; enol-Phenylpyruvic acid; enol-alpha-Ketohydrocinnamic acid; 2-Hydroxy-3-phenylpropenoate	5.4474	row116	E448
+C00437	N-Acetylornithine; N2-Acetyl-L-ornithine	4.2192	row225	E73
+C01879	5-Oxoproline; Pyroglutamic acid; 5-Pyrrolidone-2-carboxylic acid; Pyroglutamate; 5-Oxo-L-proline; L-Pyroglutamic acid; L-5-Pyrrolidone-2-carboxylic acid	9.892	row23	E645
+C00217	D-Glutamate; D-Glutamic acid; D-Glutaminic acid; D-2-Aminoglutaric acid	14.254	row8	E107
+C00152	L-Asparagine; 2-Aminosuccinamic acid	5.1449	row134	E362
+CE2244	trans-octadec-2-enoyl-CoA	-8.477	row35	E285
+C00275	D-Mannose 6-phosphate	11.658	row12	E118
+C05838	cis-2-Hydroxycinnamate; 2-Coumarinate	5.4474	row116	E448
+C03035	gamma-Linolenoyl-CoA	-8.477	row35	E285
+C02505	2-Phenylacetamide	5.6587	row103	E138
+C00140	N-Acetyl-D-glucosamine; N-Acetylchitosamine; 2-Acetamido-2-deoxy-D-glucose; GlcNAc	6.3383	row74	E484
+C00025	L-Glutamate; L-Glutamic acid; L-Glutaminic acid; Glutamate	14.254	row8	E107
+C02763	enol-Phenylpyruvate; enol-Phenylpyruvic acid; enol-alpha-Ketohydrocinnamic acid; 2-Hydroxy-3-phenylpropenoate	4.0522	row251	E448
+C00078	L-Tryptophan; Tryptophan; (S)-alpha-Amino-beta-(3-indolyl)-propionic acid	5.9056	row89	E116
+C01132	N-Acetyl-D-galactosamine; N-Acetyl-D-chondrosamine; 2-Acetamido-2-deoxy-D-galactose	6.3383	row74	E484
+C00093	sn-Glycerol 3-phosphate; Glycerophosphoric acid; D-Glycerol 1-phosphate; Glycerol-3-phosphate	5.9189	row88	E382
+C00329	D-Glucosamine; Chitosamine; 2-Amino-2-deoxy-D-glucose	4.1297	row237	E312
+C00542	Cystathionine	4.2944	row215	E25
+C04281	L-1-Pyrroline-3-hydroxy-5-carboxylate; 3-Hydroxy-L-1-pyrroline-5-carboxylate; (3R,5S)-1-Pyrroline-3-hydroxy-5-carboxylate	9.892	row23	E645
+C00179	Agmatine; (4-Aminobutyl) guanidine	3.3769	row390	E274
+C00025	L-Glutamate; L-Glutamic acid; L-Glutaminic acid; Glutamate	13.025	row10	E107
+C00836	Sphinganine; Dihydrosphingosine; 2-Amino-1,3-dihydroxyoctadecane	4.7873	row161	E327
+C01074	N-Acetylgalactosamine; N-Acetylchondrosamine; 2-Acetamido-2-deoxygalactose; GalNAc	6.3383	row74	E484
+C00645	N-Acetyl-D-mannosamine; 2-Acetamido-2-deoxy-D-mannose	6.3383	row74	E484
+C00719	Betaine; Trimethylaminoacetate; Glycine betaine; N,N,N-Trimethylglycine; Trimethylammonioacetate	11.379	row15	E557
+C00487	Carnitine; gamma-Trimethyl-hydroxybutyrobetaine; 3-Hydroxy-4-trimethylammoniobutanoate	6.8932	row58	E42
+C16162	(9Z,12Z,15Z)-Octadecatrienoyl-CoA; alpha-Linolenoyl-CoA	-8.477	row35	E285
+C00446	alpha-D-Galactose 1-phosphate; alpha-D-Galactopyranose 1-phosphate	11.658	row12	E118
+C00073	L-Methionine; Methionine; L-2-Amino-4methylthiobutyric acid	4.8394	row156	E213
+odecoa	Octadecenoyl-CoA (n-C18:1CoA)	-8.477	row35	E285
+C00078	L-Tryptophan; Tryptophan; (S)-alpha-Amino-beta-(3-indolyl)-propionic acid	6.4604	row69	E116

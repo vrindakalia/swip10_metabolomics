@@ -1,0 +1,262 @@
+setwd("C:/Users/vkalia2/Desktop/Miller_lab/C elegans/SWIP")
+map_pos <- read.table("hilic pos/SWIP_hilicpos_sample_id_mapfile.txt", header = T)
+map_pos$i <- seq(1, 3)
+map_pos<- subset(map_pos, map_pos$i == 1)
+map_pos <- map_pos[,c(1,2)]
+names(map_pos) <- c("file_name", "sample_id")
+dat <- read.table("hilic pos/Raw_pall_averaged_featuretable_repmax2of3_hilicpos.txt", sep="\t", header=T, stringsAsFactors = FALSE)
+names(dat) <- gsub(pattern = ".mzXML", replacement = "", x = names(dat), fixed = TRUE)
+for (i in 1:2){
+map_pos[[i]] <- as.character(map_pos[[i]])
+}
+map_pos$strain <- unlist(lapply(strsplit(map_pos$sample_id, "_"), function(i) i[1]))
+map_pos$rep <- unlist(lapply(strsplit(map_pos$sample_id, "_"), function(i) i[2]))
+map_pos$strain
+dat_met <- dat[,c(1:2,11:36)]
+names(emptyrow) <- names(dat_met)
+dat_met <- rbind(emptyrow, dat_met)
+dat_met[1,] <- c("mz","time",map_pos$strain)
+swip10 <- glob2rx("SWIP10*")
+label <- c(dat_met[1,])
+grep(swip10, label)
+features_swip10 <- with(dat_met, dat_met[, grepl(swip10,label)])
+features_swip10[1,] <- c(rep("SWIP10", 5))
+by_n2 <- glob2rx("N2*")
+label <- c(dat_met[1,])
+grep(by_n2, label)
+features_n2 <- with(dat_met, dat_met[, grepl(by_n2,label)])
+features_n2[1,] <- c(rep("N2", 5))
+m9 <- glob2rx("M9*")
+grep(m9, label)
+features_m9 <- with(dat_met, dat_met[, grepl(m9,label)])
+features_m9[1,] <- c(rep("M9", 5))
+mztime <- dat_met[,1:2]
+swip10 <- cbind(mztime, features_swip10, features_n2, features_m9)
+for(i in 1:5){
+features_m9[[i]] <- as.numeric(as.character(features_m9[[i]]))
+}
+features_m9$mean <- rowMeans(features_m9[,1:5])
+for(i in 1:5){
+features_swip10[[i]] <- as.numeric(as.character(features_swip10[[i]]))
+}
+for(j in 1:5){
+for(i in 2:nrow(features_swip10)){
+features_swip10[i,j+5] <- as.numeric((features_swip10[i,j]/features_m9$mean[i]) > 2)
+}
+}
+for(i in 2:nrow(features_swip10)){
+features_swip10[i,11] <- sum(features_swip10[i,6:10])
+}
+features_swip10 <- features_swip10[,c(1:5,11)]
+features_swip10[1,] <- as.character(c(rep("swip10",5), "sum_swip10"))
+for(i in 1:5){
+features_n2[[i]] <- as.numeric(as.character(features_n2[[i]]))
+}
+for(j in 1:5){
+for(i in 2:nrow(features_n2)){
+features_n2[i,j+5] <- as.numeric((features_n2[i,j]/features_m9$mean[i]) > 2)
+}
+}
+for(i in 2:nrow(features_n2)){
+features_n2[i,11] <- sum(features_n2[i,6:10])
+}
+features_n2 <- features_n2[,c(1:5,11)]
+features_n2[1,] <- as.character(c(rep("N2",5), "sum_n2"))
+features_swip_n2 <- cbind(mztime, features_swip10, features_n2)
+filt_swip10_n2 <- features_swip_n2[which(features_swip_n2[,8] >= 1),]
+filt_swip10_n2 <- filt_swip10_n2[,-c(8,14)]
+swip10_n2 <- filt_swip10_n2[,-c(1,2)]
+mz_filt <- filt_swip10_n2[,c(1:2)]
+for(i in 1:ncol(swip10_n2)){
+swip10_n2[[i]] <- as.numeric(as.character(swip10_n2[[i]]))
+}
+for(j in 1:ncol(swip10_n2)){
+for(i in 1:nrow(swip10_n2)){
+if(swip10_n2[i,j] == 0.0 | is.null(swip10_n2[i,j] | is.na(swip10_n2[i,j]) | is.nan(swip10_n2[i,j]))){
+swip10_n2[i,j] <- (0.5*min(swip10_n2[1, which(swip10_n2[1,] > 0)]))
+}
+}
+}
+is.nan(swip10_n2[i,j])
+is.na(swip10_n2[i,j])
+is.null(swip10_n2[i,j])
+swip10_n2[i,j] == 0.0
+swip10_n2[i,j] == 0
+for(j in 1:ncol(swip10_n2)){
+for(i in 1:nrow(swip10_n2)){
+if(swip10_n2[i,j] == 0.0 | is.null(swip10_n2[i,j]) | is.na(swip10_n2[i,j]) | is.nan(swip10_n2[i,j])){
+swip10_n2[i,j] <- (0.5*min(swip10_n2[1, which(swip10_n2[1,] > 0)]))
+}
+}
+}
+for(i in 1:ncol(swip10_n2)){
+swip10_n2[[i]] <- as.numeric(as.character(swip10_n2[[i]]))
+}
+for(j in 1:ncol(swip10_n2)){
+for(i in 1:nrow(swip10_n2)){
+if(swip10_n2[i,j] == 0.0 | is.null(swip10_n2[i,j]) | is.na(swip10_n2[i,j]) | is.nan(swip10_n2[i,j])){
+swip10_n2[i,j] <- (0.5*min(swip10_n2[1, which(swip10_n2[1,] > 0)]))
+}
+}
+}
+View(swip10_n2)
+swip10_n2 <- filt_swip10_n2[-1,-c(1,2)]
+mz_filt <- filt_swip10_n2[-1,c(1:2)]
+for(i in 1:ncol(swip10_n2)){
+swip10_n2[[i]] <- as.numeric(as.character(swip10_n2[[i]]))
+}
+for(j in 1:ncol(swip10_n2)){
+for(i in 1:nrow(swip10_n2)){
+if(swip10_n2[i,j] == 0.0 | is.null(swip10_n2[i,j]) | is.na(swip10_n2[i,j]) | is.nan(swip10_n2[i,j])){
+swip10_n2[i,j] <- (0.5*min(swip10_n2[1, which(swip10_n2[1,] > 0)]))
+}
+}
+}
+lab_swip10n2 <- filt_swip10_n2[1,]
+View(lab_swip10n2)
+swip10_filt <- cbind(mz_filt, swip10_n2)
+for(i in 1:ncol(swip10_filt)){
+swip10_filt[[i]] <- as.numeric(as.character(swip10_filt[[i]]))
+}
+swip10_n2_filtered <- rbind(lab_swip10n2, swip10_filt)
+View(swip10_n2_filtered)
+write.table(swip10_n2_filtered, "swip10_filtered01_08142018.txt", row.names = F, col.names = T, sep = "\t")
+setwd("C:/Users/vkalia2/Desktop/Miller_lab/C elegans/SWIP")
+map_pos <- read.table("c18 neg/SWIP_c18neg_sample_id_mapfile.txt", header = T)
+map_pos$i <- seq(1, 3)
+map_pos<- subset(map_pos, map_pos$i == 1)
+map_pos <- map_pos[,c(1,2)]
+names(map_pos) <- c("file_name", "sample_id")
+dat <- read.table("c18 neg/Raw_pall_averaged_featuretable_repmax2of3_c18neg.txt", sep="\t", header=T, stringsAsFactors = FALSE)
+names(dat) <- gsub(pattern = ".mzXML", replacement = "", x = names(dat), fixed = TRUE)
+for (i in 1:2){
+map_pos[[i]] <- as.character(map_pos[[i]])
+}
+map_pos$strain <- unlist(lapply(strsplit(map_pos$sample_id, "_"), function(i) i[1]))
+map_pos$rep <- unlist(lapply(strsplit(map_pos$sample_id, "_"), function(i) i[2]))
+map_pos$strain
+ncol(dat)
+colnames(dat)
+dat_met <- dat[,c(1:2,11:36)]
+emptyrow <- data.frame(matrix(nrow = 1, ncol = 28))
+names(emptyrow) <- names(dat_met)
+dat_met <- rbind(emptyrow, dat_met)
+dat_met[1,] <- c("mz","time",map_pos$strain)
+swip10 <- glob2rx("SWIP10*")
+label <- c(dat_met[1,])
+grep(swip10, label)
+features_swip10 <- with(dat_met, dat_met[, grepl(swip10,label)])
+features_swip10[1,] <- c(rep("SWIP10", 5))
+by_n2 <- glob2rx("N2*")
+label <- c(dat_met[1,])
+grep(by_n2, label)
+features_n2 <- with(dat_met, dat_met[, grepl(by_n2,label)])
+features_n2[1,] <- c(rep("N2", 5))
+m9 <- glob2rx("M9*")
+grep(m9, label)
+features_m9 <- with(dat_met, dat_met[, grepl(m9,label)])
+features_m9[1,] <- c(rep("M9", 5))
+mztime <- dat_met[,1:2]
+swip10 <- cbind(mztime, features_swip10, features_n2, features_m9)
+for(i in 1:5){
+features_m9[[i]] <- as.numeric(as.character(features_m9[[i]]))
+}
+features_m9$mean <- rowMeans(features_m9[,1:5])
+for(i in 1:5){
+features_swip10[[i]] <- as.numeric(as.character(features_swip10[[i]]))
+}
+for(j in 1:5){
+for(i in 2:nrow(features_swip10)){
+features_swip10[i,j+5] <- as.numeric((features_swip10[i,j]/features_m9$mean[i]) > 2)
+}
+}
+for(i in 2:nrow(features_swip10)){
+features_swip10[i,11] <- sum(features_swip10[i,6:10])
+}
+features_swip10 <- features_swip10[,c(1:5,11)]
+features_swip10[1,] <- as.character(c(rep("swip10",5), "sum_swip10"))
+for(i in 1:5){
+features_n2[[i]] <- as.numeric(as.character(features_n2[[i]]))
+}
+for(j in 1:5){
+for(i in 2:nrow(features_n2)){
+features_n2[i,j+5] <- as.numeric((features_n2[i,j]/features_m9$mean[i]) > 2)
+}
+}
+for(i in 2:nrow(features_n2)){
+features_n2[i,11] <- sum(features_n2[i,6:10])
+}
+features_n2 <- features_n2[,c(1:5,11)]
+features_n2[1,] <- as.character(c(rep("N2",5), "sum_n2"))
+features_swip_n2 <- cbind(mztime, features_swip10, features_n2)
+filt_swip10_n2 <- features_swip_n2[which(features_swip_n2[,8] >= 1),]
+filt_swip10_n2 <- filt_swip10_n2[,-c(8,14)]
+lab_swip10 <- swip10_n2[1,]
+swip10_n2 <- filt_swip10_n2[-1,-c(1,2)]
+mz_filt <- filt_swip10_n2[-1,c(1:2)]
+for(i in 1:ncol(swip10_n2)){
+swip10_n2[[i]] <- as.numeric(as.character(swip10_n2[[i]]))
+}
+for(j in 1:ncol(swip10_n2)){
+for(i in 1:nrow(swip10_n2)){
+if(swip10_n2[i,j] == 0.0 | is.null(swip10_n2[i,j]) | is.na(swip10_n2[i,j]) | is.nan(swip10_n2[i,j])){
+swip10_n2[i,j] <- (0.5*min(swip10_n2[1, which(swip10_n2[1,] > 0)]))
+}
+}
+}
+swip10_filt <- cbind(mz_filt, swip10_n2)
+for(i in 1:ncol(swip10_filt)){
+swip10_filt[[i]] <- as.numeric(as.character(swip10_filt[[i]]))
+}
+swip10_n2_filtered_c18 <- rbind(lab_swip10, swip10_filt)
+emptyrow <- data.frame(matrix(nrow = 1, ncol = 12))
+names(emptyrow) <- names(swip10_filt)
+swip10_filt <- rbind(emptyrow, swip10_filt)
+swip10_filt[1,] <- c("mz","time", rep("swip10",5), rep("n2", 5))
+write.table(swip10_filt, "c18_swip10_filtered01_08142018.txt", row.names = F, col.names = T, sep = "\t")
+library(plyr)
+library(stringr)
+setwd("C:/Users/vkalia2/Desktop/Miller_lab/C elegans/SWIP/20180814/mcg/1534265227.46.human_swip10_hilicpos_10000/tables/")
+pathway_list_compl<- read.delim("mcg_pathwayanalysis_worm_human.tsv",
+fileEncoding= "windows-1252", header= TRUE)
+pathway_list_compl<- read.delim("mcg_pathwayanalysis_human_swip10.tsv",
+fileEncoding= "windows-1252", header= TRUE)
+feature_matches<- read.delim("ListOfEmpiricalCompounds.tsv",
+fileEncoding= "windows-1252", header= TRUE)
+mcg_input<- read.table("userInputData.txt", sep="\t", header=TRUE)
+pathway_sig_threshold<- 1
+overlap_size_threshold<- 1
+mcg_input<-mcg_input[,-ncol(mcg_input)]
+pathway_list<- pathway_list_compl
+pathway_list$p.value<-as.numeric(as.character(pathway_list$p.value))
+pathway_list$overlap_size<- as.numeric(as.character(pathway_list$overlap_size))
+pathway_list$pathway_size<- as.numeric(as.character(pathway_list$pathway_size))
+pathway_list_p.value<- pathway_list[pathway_list$p.value <= pathway_sig_threshold,]
+pathway_sig_list<- pathway_list_p.value[pathway_list_p.value$overlap_size>= overlap_size_threshold,]
+cl2<- {}
+for(n in 1:nrow(pathway_sig_list))	{
+Emp_id<- toString(pathway_sig_list[n,5])
+EID<-	unlist(strsplit(Emp_id, split= ","))
+pathway<- toString(pathway_sig_list[n,1])
+overlap_size<- as.character(pathway_sig_list[n,2])
+pathway_size<- pathway_sig_list[n,3]
+p.value<- pathway_sig_list[n,4]
+cl1<- cbind(pathway, overlap_size, pathway_size, p.value, EID)
+cl2<- rbind(cl2,cl1)
+}
+cl3<- {}
+for(n in 1:nrow(feature_matches))	{
+row_id<- toString(feature_matches[n,2])
+row_ion<- toString(feature_matches[n,3])
+massfeature_rows<-unlist(strsplit(row_id, split= ";"))
+str_row_ion<- unlist(strsplit(row_ion, split= ";"))
+adduct<-gsub(".*_","",str_row_ion)
+EID<- toString(feature_matches[n,1])
+compound_id<- as.character(feature_matches[n,4])
+compound_annotation<- as.character(feature_matches[n,5])
+cl1<- cbind(EID, massfeature_rows, adduct, compound_id, compound_annotation)
+cl3<- rbind(cl3,cl1)
+}
+adduct_input<- join(data.frame(cl3), mcg_input, by="massfeature_rows", type="left")
+pathways_adduct_input<- join(data.frame(cl2), adduct_input, by="EID", type="left")
+write.table(pathways_adduct_input, "Mummichog_parsed_results.txt", sep= "\t", row.names=FALSE)

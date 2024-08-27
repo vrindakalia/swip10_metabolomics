@@ -1,0 +1,25 @@
+# PID of current job: 2901281
+mSet<-InitDataObjects("pktable", "stat", FALSE)
+mSet<-Read.TextData(mSet, "Replacing_with_your_file_path", "colu", "disc");
+mSet<-SanityCheckData(mSet)
+mSet<-ReplaceMin(mSet);
+mSet<-SanityCheckData(mSet)
+mSet<-FilterVariable(mSet, "none", "F", 25)
+mSet<-PreparePrenormData(mSet)
+mSet<-Normalization(mSet, "QuantileNorm", "LogNorm", "AutoNorm", ratio=FALSE, ratioNum=20)
+mSet<-PlotNormSummary(mSet, "norm_0_", "png", 72, width=NA)
+mSet<-PlotSampleNormSummary(mSet, "snorm_0_", "png", 72, width=NA)
+mSet<-Ttests.Anal(mSet, F, 0.05, FALSE, TRUE, "fdr", FALSE)
+mSet<-PlotTT(mSet, "tt_0_", "png", 72, width=NA)
+mSet<-Ttests.Anal(mSet, F, 1.0, FALSE, TRUE, "raw", FALSE)
+mSet<-PlotTT(mSet, "tt_1_", "png", 72, width=NA)
+mSet<-PCA.Anal(mSet)
+mSet<-PlotPCAPairSummary(mSet, "pca_pair_0_", "png", 72, width=NA, 5)
+mSet<-PlotPCAScree(mSet, "pca_scree_0_", "png", 72, width=NA, 5)
+mSet<-PlotPCA2DScore(mSet, "pca_score2d_0_", "png", 72, width=NA, 1,2,0.95,0,0)
+mSet<-PlotPCALoading(mSet, "pca_loading_0_", "png", 72, width=NA, 1,2);
+mSet<-PlotPCABiplot(mSet, "pca_biplot_0_", "png", 72, width=NA, 1,2)
+mSet<-PlotPCA3DLoading(mSet, "pca_loading3d_0_", "json", 1,2,3)
+mSet<-PlotHeatMap(mSet, "heatmap_0_", "png", 72, width=NA, "norm", "row", "euclidean", "ward.D","bwm", 8, "overview", T, T, NULL, T, F, T, T, T)
+mSet<-PlotSubHeatMap(mSet, "heatmap_1_", "png", 72, width=NA, "norm", "row", "euclidean", "ward.D","bwm", 8, "tanova", 200, "overview", T, T, T, F, T, T, T)
+mSet<-PlotSubHeatMap(mSet, "heatmap_2_", "png", 72, width=NA, "norm", "row", "euclidean", "ward.D","bwm", 8, "tanova", 200, "overview", T, T, T, F, T, T, T)
